@@ -9,8 +9,9 @@ class fc_ItemNotExist(Exception):
 class FitCfg:
     """
     Save the configure file in the $HOME path and named as .figconf
-    recentrepo:the connect repo last time
-    timestamp:the connect time last time
+    Items contains below:
+        recentrepo:the connect repo path last time
+        timestamp:the connect time last time
     """
     def __init__(self):
         self._f=".fitconfig "
