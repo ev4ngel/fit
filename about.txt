@@ -1,0 +1,23 @@
+fit connect [dir]:		if no dir given,list the current connect dir,easy to use
+fit init [dir]:			if no dir,try to init the current dir 
+fit test file:			In the connect-dir try to find the copy-file info
+fit copy file $subdir:		
+fit move file $subdir
+fit remove $s/u/b/d/i/r/file
+fit reinit [dir]:		discard the previous database and re-init the file,if just want to update the database,fit update recommended
+fit info [$[subdir[/file]]]:	file info==file info $
+				Files:xxx,Size:xxx
+				File:xxx,Size:xxx
+fit update [dir]:		if connect done ,fit update is trying to update the connect-dir,else try to updatethe given dir.
+					if Non-init,a ask for init come up
+
+for /f tokens=1,2 delims= %%a in (menu.lst) do (
+fit copy %%a $%%b
+
+)
+
+
+cfg
+[cmd]
+recentrepo = e:\xxx
+timestamp = xxxxx
