@@ -1,11 +1,20 @@
 #-*- coding:utf-8 -*-
+"""
+configure file tool for fit
+"""
 import ConfigParser,os,time
+all=["fc_ItemNotExist","FitCfg"]
 class fc_ItemNotExist(Exception):
     pass
 class FitCfg:
+    """
+    Save the configure file in the $HOME path and named as .figconf
+    recentrepo:the connect repo last time
+    timestamp:the connect time last time
+    """
     def __init__(self):
         self._f=".fitconfig "
-        self._p=os.getenv("home")
+        self._p=os.path.expanduser("~")
         self._c=ConfigParser.ConfigParser()
         self._pf=os.path.join(self._p,self._f)
         if os.path.exists(self._pf):
