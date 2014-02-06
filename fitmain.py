@@ -48,12 +48,13 @@ class FitMain:
         rfs=[]
         lat=[]
         sum_size=cur_size=0
+        print "Preparing For Parse Dir Tree..."
         for cd,xd,xf in os.walk(_dirx):
             for xff in xf:
                 o_size=os.stat(os.path.join(cd,xff)).st_size
                 infos.append((xff,cd,o_size))
                 sum_size+=o_size
-        print "Calculating Md5s"
+        print "Calculating MD5s,[%d] Files Found,This May Take Some Seconds..."%len(infos)
         for rf in infos:
             rfs.append((rf[0],self.md5file(os.path.join(rf[1],rf[0])),rf[1],rf[2]))
             cur_size+=rf[2]

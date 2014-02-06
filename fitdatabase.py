@@ -6,21 +6,20 @@ class FitDatabaseTableExists(Exception):
     pass
 class FitDBConf:
     """
-    
+    time
     """
     @staticmethod
     def dbname():
-    """
-    static method
-    return the name of the database
-    """
+        """
+        static method return the name of the database
+        """
         return ".fitdb"
     @staticmethod
     def sql_create_table():
-    """
-    static method
-    return the create tablse string
-    """
+        """
+        static method
+        return the create tablse string
+        """
         return "CREATE TABLE FT_FILES(F_NAME TEXT,F_HASH TEXT,F_PATH TEXT,F_SIZE LONG,F_TIME TIMESTAMP)"
     
 class FitDatabase:
